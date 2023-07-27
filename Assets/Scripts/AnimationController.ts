@@ -1,39 +1,42 @@
-import { AnimationClip, Resources } from 'UnityEngine';
+import {KeyValuePair$2, List$1 } from 'System.Collections.Generic';
+import { AnimationClip, Animator, AnimatorOverrideController, Resources, RuntimeAnimatorController } from 'UnityEngine';
+import {CharacterState, ZepetoPlayers} from 'ZEPETO.Character.Controller';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
-
-export enum OverrideAnimationType
-{
-    SWIM_IDLE,
-    SWIM_MOVE,
-    SAND_MOVE,
-    ROLLER_MOVE,
-    MAX
-}
+import Main from './Main';
+import { ZoneType } from './TerrainZoneTrigger';
 
 export default class AnimationController extends ZepetoScriptBehaviour {
-    private overrideAnims: AnimationClip[] = new Array<AnimationClip>();
+    private animator: Animator;
     
     public Start()
     {
-        for (let i = 0; i < OverrideAnimationType.MAX; i++)
-        {
-            //Load Animation Overrides from Resources Folder
-            let clip : AnimationClip = Resources.Load<AnimationClip>("ANIM/ANIM_OVERRIDE_" + i);
-            if (clip != undefined && clip != null)
-            {
-                this.overrideAnims.push(clip);
-            }
-        }
+        this.animator = this.GetComponentInChildren<Animator>();
     }
     
-    public ApplyOverrideAnimation(type: OverrideAnimationType)
+    public ApplyOverrideAnimation(type: ZoneType)
     {
+        let state: CharacterState = ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character.CurrentState;
+        
         //Override the animations based on the type enum
+        switch(type)
+        {
+            case ZoneType.WATER:
+                this.animator.runtimeAnimatorController = Main.GetInstance().swimAnimatorController;
+                break;
+            case ZoneType.SAND:
+                this.animator.runtimeAnimatorController = Main.GetInstance().sandAnimatorController;
+                break;
+        }
+        
+        this.animator.SetInteger("State",state);
     }
     
     public ResetOverrides()
     {
         //Reset Animations back to original states
+        let state: CharacterState = ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character.CurrentState;
+        this.animator.runtimeAnimatorController = Main.GetInstance().defaultAnimatorController;
+        this.animator.SetInteger("State",state);
     }
 
 }

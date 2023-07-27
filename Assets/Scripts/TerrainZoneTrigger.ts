@@ -1,13 +1,12 @@
 import { Collider } from 'UnityEngine';
 import {ZepetoCharacter, ZepetoPlayer } from 'ZEPETO.Character.Controller';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
-import AnimationController, { OverrideAnimationType } from './AnimationController';
+import AnimationController from './AnimationController';
 
 export enum ZoneType
 {
     WATER,
-    SAND,
-    SKATEPARK
+    SAND
 }
 
 export default class ZoneTrigger extends ZepetoScriptBehaviour {
@@ -38,19 +37,13 @@ export default class ZoneTrigger extends ZepetoScriptBehaviour {
         if (animController == undefined) { console.error("Couldn't Find an Animator"); return; }
         switch(this.zoneType)
         {
-            case ZoneType.SKATEPARK:
-                console.log("Triggered SKATEPARK");
-                //TODO: Equip Ice Skates through Mannequin
-                animController.ApplyOverrideAnimation(OverrideAnimationType.ROLLER_MOVE);
-                break;
             case ZoneType.WATER:
                 console.log("Triggered WATER");
-                animController.ApplyOverrideAnimation(OverrideAnimationType.SWIM_IDLE);
-                animController.ApplyOverrideAnimation(OverrideAnimationType.SWIM_MOVE);
+                animController.ApplyOverrideAnimation(this.zoneType);
                 break;
             case ZoneType.SAND:
                 console.log("Triggered SAND");
-                animController.ApplyOverrideAnimation(OverrideAnimationType.SAND_MOVE);
+                animController.ApplyOverrideAnimation(this.zoneType);
                 break;
             default:
                 break;

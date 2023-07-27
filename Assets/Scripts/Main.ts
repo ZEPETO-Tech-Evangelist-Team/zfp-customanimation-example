@@ -1,4 +1,4 @@
-import { GameObject } from 'UnityEngine';
+import {AnimationClip, GameObject, RuntimeAnimatorController} from 'UnityEngine';
 import {LocalPlayer, ZepetoPlayers } from 'ZEPETO.Character.Controller';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import AnimationController from './AnimationController';
@@ -11,6 +11,10 @@ export default class Main extends ZepetoScriptBehaviour {
         
         return this.instance;
     }
+
+    public swimAnimatorController: RuntimeAnimatorController;
+    public sandAnimatorController: RuntimeAnimatorController;
+    public defaultAnimatorController: RuntimeAnimatorController;
     
     private static instance;
     private localPlayer: LocalPlayer;
