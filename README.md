@@ -1,2 +1,2 @@
 # zfp-customanimation-example
-Example project for applying custom character animations based on zone.
+Example project for applying custom character animations based on terrain zones.
