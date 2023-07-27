@@ -7,7 +7,7 @@ export enum ZoneType
 {
     WATER,
     SAND,
-    ICE
+    SKATEPARK
 }
 
 export default class ZoneTrigger extends ZepetoScriptBehaviour {
@@ -28,25 +28,28 @@ export default class ZoneTrigger extends ZepetoScriptBehaviour {
         if (other.gameObject.tag == "Player")
         {
             let animController: AnimationController = other.GetComponent<AnimationController>();
-            if (animController == undefined) { console.error("Couldn't Find an Animator"); }
+            if (animController == undefined) { console.error("Couldn't Find an Animator"); return; }
             this.ResetZone(animController);
         }
     }
     
     public ApplyZone(animController: AnimationController)
     {
-        if (animController == undefined) { console.error("Couldn't Find an Animator"); }
+        if (animController == undefined) { console.error("Couldn't Find an Animator"); return; }
         switch(this.zoneType)
         {
-            case ZoneType.ICE:
+            case ZoneType.SKATEPARK:
+                console.log("Triggered SKATEPARK");
                 //TODO: Equip Ice Skates through Mannequin
-                animController.ApplyOverrideAnimation(OverrideAnimationType.ICE_MOVE);
+                animController.ApplyOverrideAnimation(OverrideAnimationType.ROLLER_MOVE);
                 break;
             case ZoneType.WATER:
+                console.log("Triggered WATER");
                 animController.ApplyOverrideAnimation(OverrideAnimationType.SWIM_IDLE);
                 animController.ApplyOverrideAnimation(OverrideAnimationType.SWIM_MOVE);
                 break;
             case ZoneType.SAND:
+                console.log("Triggered SAND");
                 animController.ApplyOverrideAnimation(OverrideAnimationType.SAND_MOVE);
                 break;
             default:

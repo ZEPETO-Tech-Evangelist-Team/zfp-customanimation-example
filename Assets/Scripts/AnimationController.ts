@@ -6,7 +6,7 @@ export enum OverrideAnimationType
     SWIM_IDLE,
     SWIM_MOVE,
     SAND_MOVE,
-    ICE_MOVE,
+    ROLLER_MOVE,
     MAX
 }
 
@@ -18,7 +18,7 @@ export default class AnimationController extends ZepetoScriptBehaviour {
         for (let i = 0; i < OverrideAnimationType.MAX; i++)
         {
             //Load Animation Overrides from Resources Folder
-            let clip : AnimationClip = Resources.Load<AnimationClip>("ANIM_OVERRIDE_" + i);
+            let clip : AnimationClip = Resources.Load<AnimationClip>("ANIM/ANIM_OVERRIDE_" + i);
             if (clip != undefined && clip != null)
             {
                 this.overrideAnims.push(clip);

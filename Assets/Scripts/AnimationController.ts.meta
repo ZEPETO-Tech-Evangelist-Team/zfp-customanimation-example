@@ -24,18 +24,18 @@ ScriptedImporter:
     OverrideAnimationType;\r\n(function (OverrideAnimationType) {\r\n    OverrideAnimationType[OverrideAnimationType[\"SWIM_IDLE\"]
     = 0] = \"SWIM_IDLE\";\r\n    OverrideAnimationType[OverrideAnimationType[\"SWIM_MOVE\"]
     = 1] = \"SWIM_MOVE\";\r\n    OverrideAnimationType[OverrideAnimationType[\"SAND_MOVE\"]
-    = 2] = \"SAND_MOVE\";\r\n    OverrideAnimationType[OverrideAnimationType[\"ICE_MOVE\"]
-    = 3] = \"ICE_MOVE\";\r\n    OverrideAnimationType[OverrideAnimationType[\"MAX\"]
+    = 2] = \"SAND_MOVE\";\r\n    OverrideAnimationType[OverrideAnimationType[\"ROLLER_MOVE\"]
+    = 3] = \"ROLLER_MOVE\";\r\n    OverrideAnimationType[OverrideAnimationType[\"MAX\"]
     = 4] = \"MAX\";\r\n})(OverrideAnimationType = exports.OverrideAnimationType ||
     (exports.OverrideAnimationType = {}));\r\nclass AnimationController extends ZEPETO_Script_1.ZepetoScriptBehaviour
     {\r\n    constructor() {\r\n        super(...arguments);\r\n        this.overrideAnims
     = new Array();\r\n    }\r\n    Start() {\r\n        for (let i = 0; i < OverrideAnimationType.MAX;
     i++) {\r\n            //Load Animation Overrides from Resources Folder\r\n           
-    let clip = UnityEngine_1.Resources.Load(\"ANIM_OVERRIDE_\" + i);\r\n           
+    let clip = UnityEngine_1.Resources.Load(\"ANIM/ANIM_OVERRIDE_\" + i);\r\n           
     if (clip != undefined && clip != null) {\r\n                this.overrideAnims.push(clip);\r\n           
     }\r\n        }\r\n    }\r\n    ApplyOverrideAnimation(type) {\r\n        //Override
     the animations based on the type enum\r\n    }\r\n    ResetOverrides() {\r\n       
     //Reset Animations back to original states\r\n    }\r\n}\r\nexports.default =
-    AnimationController;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQW5pbWF0aW9uQ29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkFuaW1hdGlvbkNvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsNkNBQXVEO0FBQ3ZELGlEQUFxRDtBQUVyRCxJQUFZLHFCQU9YO0FBUEQsV0FBWSxxQkFBcUI7SUFFN0IsMkVBQVMsQ0FBQTtJQUNULDJFQUFTLENBQUE7SUFDVCwyRUFBUyxDQUFBO0lBQ1QseUVBQVEsQ0FBQTtJQUNSLCtEQUFHLENBQUE7QUFDUCxDQUFDLEVBUFcscUJBQXFCLEdBQXJCLDZCQUFxQixLQUFyQiw2QkFBcUIsUUFPaEM7QUFFRCxNQUFxQixtQkFBb0IsU0FBUSxxQ0FBcUI7SUFBdEU7O1FBQ1ksa0JBQWEsR0FBb0IsSUFBSSxLQUFLLEVBQWlCLENBQUM7SUF5QnhFLENBQUM7SUF2QlUsS0FBSztRQUVSLEtBQUssSUFBSSxDQUFDLEdBQUcsQ0FBQyxFQUFFLENBQUMsR0FBRyxxQkFBcUIsQ0FBQyxHQUFHLEVBQUUsQ0FBQyxFQUFFLEVBQ2xEO1lBQ0ksZ0RBQWdEO1lBQ2hELElBQUksSUFBSSxHQUFtQix1QkFBUyxDQUFDLElBQUksQ0FBZ0IsZ0JBQWdCLEdBQUcsQ0FBQyxDQUFDLENBQUM7WUFDL0UsSUFBSSxJQUFJLElBQUksU0FBUyxJQUFJLElBQUksSUFBSSxJQUFJLEVBQ3JDO2dCQUNJLElBQUksQ0FBQyxhQUFhLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDO2FBQ2pDO1NBQ0o7SUFDTCxDQUFDO0lBRU0sc0JBQXNCLENBQUMsSUFBMkI7UUFFckQsZ0RBQWdEO0lBQ3BELENBQUM7SUFFTSxjQUFjO1FBRWpCLDBDQUEwQztJQUM5QyxDQUFDO0NBRUo7QUExQkQsc0NBMEJDIn0=","assetPath":"Assets/Scripts/AnimationController.ts","manifest":{"properties":[],"name":"AnimationController","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: 4c79b9287667d948fbbe128a6e3888af
+    AnimationController;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQW5pbWF0aW9uQ29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkFuaW1hdGlvbkNvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsNkNBQXVEO0FBQ3ZELGlEQUFxRDtBQUVyRCxJQUFZLHFCQU9YO0FBUEQsV0FBWSxxQkFBcUI7SUFFN0IsMkVBQVMsQ0FBQTtJQUNULDJFQUFTLENBQUE7SUFDVCwyRUFBUyxDQUFBO0lBQ1QsK0VBQVcsQ0FBQTtJQUNYLCtEQUFHLENBQUE7QUFDUCxDQUFDLEVBUFcscUJBQXFCLEdBQXJCLDZCQUFxQixLQUFyQiw2QkFBcUIsUUFPaEM7QUFFRCxNQUFxQixtQkFBb0IsU0FBUSxxQ0FBcUI7SUFBdEU7O1FBQ1ksa0JBQWEsR0FBb0IsSUFBSSxLQUFLLEVBQWlCLENBQUM7SUF5QnhFLENBQUM7SUF2QlUsS0FBSztRQUVSLEtBQUssSUFBSSxDQUFDLEdBQUcsQ0FBQyxFQUFFLENBQUMsR0FBRyxxQkFBcUIsQ0FBQyxHQUFHLEVBQUUsQ0FBQyxFQUFFLEVBQ2xEO1lBQ0ksZ0RBQWdEO1lBQ2hELElBQUksSUFBSSxHQUFtQix1QkFBUyxDQUFDLElBQUksQ0FBZ0IscUJBQXFCLEdBQUcsQ0FBQyxDQUFDLENBQUM7WUFDcEYsSUFBSSxJQUFJLElBQUksU0FBUyxJQUFJLElBQUksSUFBSSxJQUFJLEVBQ3JDO2dCQUNJLElBQUksQ0FBQyxhQUFhLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDO2FBQ2pDO1NBQ0o7SUFDTCxDQUFDO0lBRU0sc0JBQXNCLENBQUMsSUFBMkI7UUFFckQsZ0RBQWdEO0lBQ3BELENBQUM7SUFFTSxjQUFjO1FBRWpCLDBDQUEwQztJQUM5QyxDQUFDO0NBRUo7QUExQkQsc0NBMEJDIn0=","assetPath":"Assets/Scripts/AnimationController.ts","manifest":{"properties":[],"name":"AnimationController","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 69ba0337c58a45d6ca03390563028b66
   onlyWriteTrigger: 0
