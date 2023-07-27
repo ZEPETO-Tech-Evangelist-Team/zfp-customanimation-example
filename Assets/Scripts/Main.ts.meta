@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: 161a18a58c318244c981115f42c2e0f9
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst AnimationController_1
+    = require(\"./AnimationController\");\r\nclass Main extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    static GetInstance() {\r\n        if (this.instance == undefined)\r\n           
+    this.instance = UnityEngine_1.GameObject.Find(\"Main\").GetComponent($typeof(Main));\r\n       
+    return this.instance;\r\n    }\r\n    Start() {\r\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\r\n            this.localPlayer = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer;\r\n           
+    this.localPlayer.zepetoPlayer.character.gameObject.AddComponent($typeof(AnimationController_1.default));\r\n       
+    });\r\n    }\r\n}\r\nexports.default = Main;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTWFpbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIk1haW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBeUM7QUFDekMsNkVBQXdFO0FBQ3hFLGlEQUFxRDtBQUNyRCwrREFBd0Q7QUFFeEQsTUFBcUIsSUFBSyxTQUFRLHFDQUFxQjtJQUM1QyxNQUFNLENBQUMsV0FBVztRQUVyQixJQUFJLElBQUksQ0FBQyxRQUFRLElBQUksU0FBUztZQUMxQixJQUFJLENBQUMsUUFBUSxHQUFHLHdCQUFVLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxDQUFDLFlBQVksU0FBQyxJQUFJLEVBQUcsQ0FBQztRQUVqRSxPQUFPLElBQUksQ0FBQyxRQUFRLENBQUM7SUFDekIsQ0FBQztJQUtNLEtBQUs7UUFFUiwyQ0FBYSxDQUFDLFFBQVEsQ0FBQyxrQkFBa0IsQ0FBQyxXQUFXLENBQUMsR0FBRSxFQUFFO1lBQ3RELElBQUksQ0FBQyxXQUFXLEdBQUcsMkNBQWEsQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDO1lBQ3RELElBQUksQ0FBQyxXQUFXLENBQUMsWUFBWSxDQUFDLFNBQVMsQ0FBQyxVQUFVLENBQUMsWUFBWSxTQUFDLDZCQUFtQixHQUFJO1FBQzNGLENBQUMsQ0FBQyxDQUFDO0lBQ1AsQ0FBQztDQUVKO0FBcEJELHVCQW9CQyJ9","assetPath":"Assets/Scripts/Main.ts","manifest":{"properties":[],"name":"Main","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: a40ef33d450d16921e5acdfaca10b321
+  onlyWriteTrigger: 0
